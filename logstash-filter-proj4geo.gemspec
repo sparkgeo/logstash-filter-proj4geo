@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
-  s.name          = 'logstash-filter-wkt_to_geojson'
-  s.version       = '0.1.4'
+  s.name          = 'logstash-filter-proj4geo'
+  s.version       = '0.0.1'
   s.licenses      = ['Apache-2.0']
-  s.summary       = 'Logstash filter to convert WKT geography shapes to GeoJSON.'
-  s.homepage      = 'https://github.com/kalmas/logstash-filter-wkt_to_geojson'
+  s.summary       = 'Logstash filter to convert from a SRS to Web Mercator'
+  s.homepage      = 'https://github.com/sparkgeo/logstash-filter-proj4geo'
   s.authors       = ['kalmas']
-  s.email         = 'kylealmas@gmail.com'
+  s.email         = 'alain@sparkgeo.com'
   s.require_paths = ['lib']
 
   # Files
@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
   # Special flag to let us know this is actually a logstash plugin
   s.metadata = { "logstash_plugin" => "true", "logstash_group" => "filter" }
 
-  s.add_dependency 'georuby', '2.5.2'
+  s.add_dependency 'rgeo', '2.1.1'
+  s.add_dependency 'rgeo-proj4', '2.0.0'
 
   s.add_runtime_dependency "logstash-core-plugin-api", ">= 1.60", "<= 2.99"
   

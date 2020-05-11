@@ -5,15 +5,13 @@ Parses WKT encoded geography on Logstash event and converts it to GeoJSON.
 [source,logstash]
 ----
 filter {
-    wkt_to_geojson {
-        field => "wkt"
-        target => "geo_json"
-        tag_on_parse_failure => [ "wkt_paring_error" ]
+    proj4geo {
+        field => "cp"
+        target => "cp_3857"
+        tag_on_parse_failure => [ "proj4geo_parsing_error" ]
     }
 }
 ----
-
-For walk through of developing Logstash filter plugin see https://www.elastic.co/guide/en/logstash/current/_how_to_write_a_logstash_filter_plugin.html
 
 == To Use ==
 
@@ -35,12 +33,12 @@ bundle exec rspec
 
 [source,sh]
 ----
-gem build logstash-filter-wkt_to_geojson.gemspec
+gem build logstash-filter-proj4geo.gemspec
 ----
 
 - Install Gem as Logstash plugin
 
 [source,sh]
 ----
-logstash-plugin install logstash-filter-wkt_to_geojson-0.1.0.gem
+logstash-plugin install logstash-filter-proj4geo-0.0.1.gem
 ----
