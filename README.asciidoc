@@ -1,6 +1,6 @@
-= WKT to GeoJSON Logstash Filter =
+= Proj4Geo Logstash Filter =
 
-Parses WKT encoded geography on Logstash event and converts it to GeoJSON.
+Translate geometries from one Spatial Ref System to another using proj4.
 
 [source,logstash]
 ----
