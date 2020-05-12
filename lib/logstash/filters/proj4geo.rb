@@ -1,9 +1,9 @@
 # encoding: utf-8
 require "logstash/filters/base"
 require "logstash/namespace"
-# require 'json'
-require 'rgeo'
-require 'rgeo-proj4'
+
+require "rgeo"
+require "rgeo-proj4"
 
 class LogStash::Filters::Proj4Geo < LogStash::Filters::Base
 
